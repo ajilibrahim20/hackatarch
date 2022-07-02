@@ -11,27 +11,27 @@ const sidebarNavItems = [
     },
     {
         display: 'Travel Card',
-        icon: <i className='bx bx-star'></i>,
+        icon: <i className='bx bx-id-card'></i>,
         to: '/Travelcard',
         section: 'Travelcard'
     },
     {
         display: 'Native Market',
-        icon: <i className='bx bx-calendar'></i>,
+        icon: <i className='bx bx-store'></i>,
         to: '/Productadd',
         section: 'Productadd'
     },
     {
         display: 'Your Location',
         icon: <i className='bx bx-location-plus'></i>,
-        to: '/geolocation',
-        section: 'geolocation'
+        to: '/Demo',
+        section: 'Demo'
     },
     {
-        display: 'Features',
+        display: 'Contact Us',
         icon: <i className='bx bx-receipt'></i>,
-        to: '/order',
-        section: 'order'
+        to: '/ContactForm',
+        section: 'ContactForm'
     },
 ]
 
@@ -71,7 +71,7 @@ const Sidebar = () => {
             ></div>
             {
                 sidebarNavItems.map((item, index) => (
-                    <Link to={item.to} key={index}>
+                    <Link to={item.to} key={index} style={{textDecoration:"none"}}>
                         <div className={`sidebar__menu__item ${activeIndex === index ? 'active' : ''}`}>
                             <div className="sidebar__menu__item__icon">
                                 {item.icon}

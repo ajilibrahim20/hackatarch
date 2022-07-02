@@ -8,7 +8,7 @@ export default function Navbar() {
     <header className="header">
       <img src={logo} className="header-logo"></img>
       <nav className="navigation">
-        <ul className="list-container">
+        {/* <ul className="list-container">
           <li>
             <a href="#home" className="header-links">
               Home
@@ -29,8 +29,8 @@ export default function Navbar() {
               Add products
             </a>
           </li>
-        </ul>
-        <ul
+        </ul> */}
+        {/* <ul
           style={{
             listStyle: "none",
             gridColumn: "8/-1",
@@ -47,7 +47,7 @@ export default function Navbar() {
               <GoLocation />
             </a>
           </li>
-        </ul>
+        </ul> */}
       </nav>
     </header>
   );
