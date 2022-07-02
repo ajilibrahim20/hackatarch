@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
+import 'boxicons/css/boxicons.min.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import AppLayout from './components/applayout/AppLayout';
 import Shop from "./components/shop/Shop";
 import Home from "./components/home/Home";
 import Demo from "./components/map/geolocation";
@@ -9,6 +12,7 @@ import Productadd from "./components/productsadd/Productadd";
 import Travelcard from "./components/travelcard/Travelcard";
 import About from "./components/about/About";
 import Loading from "./Loading";
+import Sidebar from "./components/sidebar/Sidebar";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -17,22 +21,18 @@ function App() {
     setTimeout(() => setLoading(false), 3000);
   }, []);
   return (
-    <>
-      {loading === false ? (
-        <div className="App">
-          <Navbar />
-          <Home />
-          <Travelcard />
-          <Shop />
-          <Productadd />
-          <About />
-          <Demo />
-          <Footer />
-        </div>
-      ) : (
-        <Loading />
-      )}
-    </>
+      <>
+      <Navbar />
+      <BrowserRouter>
+      <Routes>
+        <Route path='/' element={ <AppLayout />}>
+          <Route path='/Home' element={<Home />} />
+          <Route path='/Travelcard' element={<Travelcard />} />
+          <Route path='/Productadd' element={<Productadd />} />
+          <Route path='/geolocation' element={<geolocation />} />
+        </Route>
+      </Routes>
+    </BrowserRouter></>
   );
 }
 
